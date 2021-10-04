@@ -43,4 +43,10 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.delete(getProductById(id));
 	}
 
+	@Override
+	public Product getProductByUpcNumber(String upcNumber) throws ResourceNotFoundException {
+		Product product =  productRepository.findByUpcNumber(upcNumber).orElseThrow(()->  new ResourceNotFoundException("Product","upc number",""+upcNumber));
+		return product;
+	}
+
 }

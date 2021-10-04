@@ -15,6 +15,8 @@ public interface ProductService {
 	
 	Product getProductById(long productId) throws ResourceNotFoundException;
 	
+	Product getProductByUpcNumber(String upcNumber) throws ResourceNotFoundException;
+	
 	void deleteProduct(long id) throws ResourceNotFoundException;
 
 }
